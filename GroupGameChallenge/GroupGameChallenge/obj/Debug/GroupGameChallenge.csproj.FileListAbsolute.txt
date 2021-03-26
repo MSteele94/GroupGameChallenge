@@ -1,0 +1,7 @@
+C:\Users\Benga\source\repos\GroupGameChallenge\GroupGameChallenge\bin\Debug\GroupGameChallenge.exe.config
+C:\Users\Benga\source\repos\GroupGameChallenge\GroupGameChallenge\bin\Debug\GroupGameChallenge.exe
+C:\Users\Benga\source\repos\GroupGameChallenge\GroupGameChallenge\bin\Debug\GroupGameChallenge.pdb
+C:\Users\Benga\source\repos\GroupGameChallenge\GroupGameChallenge\obj\Debug\GroupGameChallenge.csprojAssemblyReference.cache
+C:\Users\Benga\source\repos\GroupGameChallenge\GroupGameChallenge\obj\Debug\GroupGameChallenge.csproj.CoreCompileInputs.cache
+C:\Users\Benga\source\repos\GroupGameChallenge\GroupGameChallenge\obj\Debug\GroupGameChallenge.exe
+C:\Users\Benga\source\repos\GroupGameChallenge\GroupGameChallenge\obj\Debug\GroupGameChallenge.pdb
