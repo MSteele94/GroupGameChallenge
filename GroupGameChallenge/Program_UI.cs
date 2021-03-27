@@ -8,6 +8,10 @@ namespace GroupGameChallenge
 {
     public class Program_UI
     {
+        //if (playerScore == 100)
+        //{
+        //  RunSecretCinemaTrivia();
+        //}
         //int player score
         //player scoretwo
         //playerscorethree
@@ -17,13 +21,8 @@ namespace GroupGameChallenge
         PlayerPoints _playerScoreNineties = new PlayerPoints();
 
         string userGuessOneNineties = "";
-        string userGuessTwoNineties = "";
-        string userGuessThreeNineties = "";
-        string userGuessFourNineties = "";
-        string userGuessFiveNineties = "";
-        string userGuessSixNineties = "";
 
-
+        //heres
 
         int guessCount = 0;
         public void Run()
@@ -59,21 +58,12 @@ namespace GroupGameChallenge
 
 
         }
-        public void RunHistory(PlayerPoints playerScore)
+        public void RunHistory(PlayerPoints pScore90s)
         {
-            Console.WriteLine("Welcome to the Histroy Game");
+
+
+
             Console.Clear();
-
-            int guessCount = 0;
-            int guessLimit = 1;
-            string userGuessOne = "";
-            string userGuessTwo = "";
-            string userGuessThree = "";
-            string userGuessFour = "";
-            string userGuessFive = "";
-
-
-
             Console.WriteLine("\t\t\tYou are now playing the History Trivia Game!! Goodluck!\n" +
                                 "\t\t\tPlease carefully select your answers. An invalid character\n" +
                                 "\t\t\twill result in an extra deduction of points!!\n" +
@@ -84,342 +74,78 @@ namespace GroupGameChallenge
             {
 
                 //Question One
-                if (guessCount < guessLimit)
-                {
-                    Console.WriteLine("Question 1:\n" +
-                                        "\tWhat President was responsible for Watergate\n" +
-                                        "\ta. Ronald Reagan\n" +
-                                        "\tb. Richard Nixon\n" +
-                                        "\tc. Bill Clinton\n" +
-                                        "\td. George Washington");
-                    userGuessOne = Console.ReadLine();
 
-                    switch (userGuessOne.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessOne != "B")
-                            {
-                                Console.WriteLine("Wrong Answer, you lose 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
 
-                            }
-                            break;
-                        case "B":
-                            if (userGuessOne.ToUpper() == "B")
-                            {
-                                Console.WriteLine("That was correct!! You earn 200 points!");
-                                Console.Beep();
+                GiveMeAQuestionForAnswerB("Question 1:\n" +
+                                    "\tWhat President was responsible for Watergate\n" +
+                                    "\ta. Ronald Reagan\n" +
+                                    "\tb. Richard Nixon\n" +
+                                    "\tc. Bill Clinton\n" +
+                                    "\td. George Washington", 1, pScore90s, new List<string>{
+                                    "Wrong Answer, you lose 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question", "That was correct!! You earn 200 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question", "Wrong Answer, you lose 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question" , "Wrong Answer, you lose 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question"}, "B");
 
-                                playerScore.PlayerScore += 200;
-                            }
-                            break;
+                GiveMeAQuestionForAnswerC("Question 2:\n" +
+                                         "\tWhat country helped during the revolutionary war?\n" +
+                                         "\ta. Great Britain\n" +
+                                         "\tb. Spain\n" +
+                                         "\tc. France\n" +
+                                         "\td. All of the above", 1, pScore90s, new List<string>{
+                                         "Wrong Answer, you lose 100 points!\n" +
+                                         "Press any key to see your current points and to continue to the next question","Wrong Answer, you lose 100 points!\n" +
+                                         "Press any key to see your current points and to continue to the next question" , "That was correct!! You earn 200 points!\n" +
+                                         "Press any key to see your current points and to continue to the next question" , "Wrong Answer, you lose 100 points!\n" +
+                                         "Press any key to see your current points and to continue to the next question" }, "C");
 
-                        case "C":
-                            if (userGuessOne != "B")
-                            {
-                                Console.WriteLine("Wrong Answer, you lose 100 points");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
 
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "D":
-                            if (userGuessOne != "B")
-                            {
-                                Console.WriteLine("Wrong Answer, you lose 100 points");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
 
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lose 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
-                    }
-                }
-                Console.WriteLine($" You cuurent score is {playerScore.PlayerScore}");
-                Console.WriteLine("Press any key to continue....");
-                Console.ReadKey();
-                Console.Clear();
-                if (guessCount < guessLimit)
-                {
-                    Console.WriteLine("Question 2:\n" +
-                                        "\tWhat country helped during the revolutionary war?\n" +
-                                        "\ta. Great Britain\n" +
-                                        "\tb. Spain\n" +
-                                        "\tc. France\n" +
-                                        "\td. All of the above");
-                    userGuessTwo = Console.ReadLine();
-                    switch (userGuessTwo.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessTwo != "C")
-                            {
-                                Console.WriteLine("Incorrect Answer, You lose 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "B":
-                            if (userGuessTwo != "C")
-                            {
-                                Console.WriteLine("Incorrect Answer, You lose 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "C":
-                            if (userGuessTwo.ToUpper() == "C")
-                            {
-                                Console.WriteLine("Your answer was correct!! You earned 200 points");
-                                Console.Beep();
+                GiveMeAQuestionForAnswerB("Question 3:\n" +
+                                           "\tWhen was the declaration of independence signed?\n" +
+                                           "\ta. 1783\n" +
+                                           "\tb. 1776\n" +
+                                           "\tc. 1801\n" +
+                                           "\td. 1925", 1, pScore90s, new List<string>{
+                                           "Incorrect Answer!  You lost 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question","Correct Answer, You earned 200 points!.. I would be disapppointed if you got this wrong!\n" +
+                                    "Press any key to see your current points and to continue to the next question", "Incorrect Answer!  You lost 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question","Incorrect Answer!  You lost 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question"}, "B");
 
-                                playerScore.PlayerScore += 200;
-                            }
-                            break;
-                        case "D":
-                            if (userGuessTwo != "C")
-                            {
-                                Console.WriteLine("Incorrect Answer,  You lose 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lose 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
 
-                    }
-                }
-                Console.ReadKey();
-                Console.WriteLine($"You current score is {playerScore.PlayerScore} points!");
-                Console.WriteLine("Press any key to continue....");
-                Console.ReadKey();
-                Console.Clear();
-                if (guessCount < guessLimit)
-                {
-                    Console.WriteLine("Question 3:\n" +
-                                        "\tWhen was the declaration of independence signed?\n" +
-                                        "\ta. 1783\n" +
-                                        "\tb. 1776\n" +
-                                        "\tc. 1801\n" +
-                                        "\td. 1925");
-                    userGuessThree = Console.ReadLine();
-                    switch (userGuessThree.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessThree != "B")
-                            {
-                                Console.WriteLine("Incorrect Answer!  You lost 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "B":
-                            if (userGuessThree.ToUpper() == "B")
-                            {
-                                Console.WriteLine("Correct Answer, You earned 200 points!");
-                                Console.Beep();
+                GiveMeAQuestionForAnswerD("Question 4:\n" +
+                                          "\tWho was the 2nd President of the United States?\n" +
+                                          "\ta. Thomas Jefferson\n" +
+                                          "\tb. Teddy Rosevelt\n" +
+                                          "\tc. Thomas Edison\n" +
+                                          "\td. John Adams", 1, pScore90s, new List<string>{
+                                          "Incorrect Answer!  You lost 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question", "Incorrect Answer!  You lost 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question", "Incorrect Answer!  You lost 100 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question", "Correct Answer! You earned 200 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question"}, "D");
 
-                                playerScore.PlayerScore += 200;
-                            }
-                            break;
-                        case "C":
-                            if (userGuessThree != "B")
-                            {
-                                Console.WriteLine("Incorrect Answer!  You lost 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "D":
-                            if (userGuessThree != "B")
-                            {
-                                Console.WriteLine("Did you even READ the question?????? You lost 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lose 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
-                    }
-                }
-                Console.ReadKey();
-                Console.WriteLine($"You current score is {playerScore.PlayerScore} points!");
-                Console.WriteLine("Press any key to continue....");
-                Console.ReadKey();
-                Console.Clear();
-                if (guessCount < guessLimit)
-                {
-                    Console.WriteLine("Question 4:\n" +
-                                       "\tWho was the 2nd President of the United States?\n" +
-                                       "\ta. Thomas Jefferson\n" +
-                                       "\tb. Teddy Rosevelt\n" +
-                                       "\tc. Thomas Edison\n" +
-                                       "\td. John Adams");
-                    userGuessFour = Console.ReadLine();
-                    switch (userGuessFour.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessFour != "D")
-                            {
-                                Console.WriteLine("Incorrect Answer! You lost 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "B":
-                            if (userGuessFour != "D")
-                            {
-                                Console.WriteLine("Incorrect Answer! You lost 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "C":
-                            if (userGuessFour != "D")
-                            {
-                                Console.WriteLine("Incorrect Answer! You lost 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "D":
-                            if (userGuessFour.ToUpper() == "D")
-                            {
-                                Console.WriteLine("Correct Answer! You earned 200 points!");
-                                Console.Beep();
 
-                                playerScore.PlayerScore += 200;
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lose 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
-                    }
-                }
-                Console.ReadKey();
-                Console.WriteLine($"You current score is {playerScore.PlayerScore} points!");
-                Console.WriteLine("Press any key to continue....");
-                Console.ReadKey();
-                Console.Clear();
-                if (guessCount < guessLimit)
-                {
-                    Console.WriteLine("Question 5:\n" +
-                                       "\tWho did we overthrow in order to win to the Revolutionary War?\n" +
-                                       "\ta. Marie Antoineete\n" +
-                                       "\tb. King George III\n" +
-                                       "\tc. Queen Elizabeth\n" +
-                                       "\td. Alexander The Great");
-                    userGuessFive = Console.ReadLine();
-                    switch (userGuessFive.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessFive != "B")
-                            {
-                                Console.WriteLine("Incorrect Answer! You lost 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
 
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "B":
-                            if (userGuessFive.ToUpper() == "B")
-                            {
-                                Console.WriteLine("Correct Answer!!!! You Earned 200 points!!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
+                GiveMeAQuestionForAnswerB("Question 5:\n" +
+                                   "\tWho did we overthrow in order to win to the Revolutionary War?\n" +
+                                   "\ta. Marie Antoineete\n" +
+                                   "\tb. King George III\n" +
+                                   "\tc. Queen Elizabeth\n" +
+                                   "\td. Alexander The Great", 1, pScore90s, new List<string> {
+                                   "Incorrect Answer!  You lost 100 points!\n" +
+                                   "Press any key to see your current points and to continue to the next question", "Correct Answer! You earned 200 points!\n" +
+                                    "Press any key to see your current points and to continue to the next question", "Incorrect Answer!  You lost 100 points!\n" +
+                                   "Press any key to see your current points and to continue to the next question" ,"Incorrect Answer!  You lost 100 points!\n" +
+                                   "Press any key to see your current points and to continue to the next question"}, "B");
 
-                                playerScore.PlayerScore += 200;
-                            }
-                            break;
-                        case "C":
-                            if (userGuessFive != "B")
-                            {
-                                Console.WriteLine("Incorrect Answer! You lost 100 points!");
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        case "D":
-                            if (userGuessFive != "B")
-                            {
-                                Console.WriteLine("Incorrect Answer! You lost 100 points!");
-                                Console.Beep();
-                                playerScore.PlayerScore -= 100;
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lose 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
-                    }
-                }
-                Console.ReadKey();
-                Console.WriteLine($"Your final score was {playerScore.PlayerScore}!!! ");
-                //if (playerScore == 100)
-                //{
-                //    RunSecretHistoryTrivia()
-                //}
-                Console.WriteLine("That was the end of the History Trivia, Press any key to try again!");
-                Console.ReadKey();
-                Console.Clear();
-
-                //recursion
                 Run();
             }
         }
-        public void RunCinema(PlayerPoints playerScore)
+
+        public void RunCinema(PlayerPoints pScore90s)
         {
             Console.Clear();
             Console.WriteLine("\t\t\t\t\t\tWelcome to the Cinema Game!\n" +
@@ -450,273 +176,63 @@ namespace GroupGameChallenge
                                         "\ta. Leonardo DiCaprio\n" +
                                         "\tb. Jake Gyllenhaal\n" +
                                         "\tc. Ryan Gosling\n" +
-                                        "\td. Brad Pitt\n", 1, playerScore, new List<string> { "Wrong Answer, you lost 100 points!", "Wrong Answer, you lost 100 points!\n"
-                                        , "That was correct!! You earn 200 points!", "Wrong Answer, you lost 100 points!" }, "C");
-                if (guessCountCinema < guessLimitCinema)
-                {
-                    Console.WriteLine("Question 2:\n" +
-                                      "\tWho was the director of Pulp Fiction?\n" +
-                                      "\ta. James Cameron\n" +
-                                      "\tb. Quentin Tarantino\n" +
-                                      "\tc. Aaron Sorkin\n" +
-                                      "\td. M.Night Shyamalan");
-                    userGuessTwoCinema = Console.ReadLine();
-                    switch (userGuessTwoCinema.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessTwoCinema != "B")
-                            {
-                                Console.WriteLine("Wrong Answer, you lose 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
+                                        "\td. Brad Pitt\n", 1, pScore90s, new List<string> { "Wrong Answer, you lost 100 points!\n" +
+                                        "Press any key to see your points total and to continue", "Wrong Answer, you lost 100 points!\n" +
+                                        "Press any key to see your points total and to continue","That was correct!! You earn 200 points!\n" +
+                                        "Press any key to see your points total and to continue", "Wrong Answer, you lost 100 points!\n" +
+                                        "Press any key to see your points total and to continue" }, "C");
 
-                            }
-                            break;
-                        case "B":
-                            if (userGuessTwoCinema.ToUpper() == "B")
-                            {
-                                Console.WriteLine("That was correct!! You earn 200 points!");
-                                playerScore.PlayerScore += 200;
-                                Console.Beep();
+                GiveMeAQuestionForAnswerB("Question 2:\n" +
+                                   "\tWho was the director of Pulp Fiction?\n" +
+                                   "\ta. James Cameron\n" +
+                                   "\tb. Quentin Tarantino\n" +
+                                   "\tc. Aaron Sorkin\n" +
+                                   "\td. M.Night Shyamalan", 1, pScore90s, new List<string> { "Wrong Answer, you lost 100 points!\n" +
+                                  "Press any key to see your points total and to continue","That was correct!! You earn 200 points!\n" +
+                                  "Press any key to see your points total and to continue" ,"Wrong Answer, you lost 100 points!\n" +
+                                  "Press any key to see your points total and to continue","Wrong Answer, you lost 100 points!\n" +
+                                  "Press any key to see your points total and to continue"}, "B");
 
-                            }
-                            break;
-                        case "C":
-                            if (userGuessTwoCinema != "B")
-                            {
-                                Console.WriteLine("Wrong Answer, you lost 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "D":
-                            if (userGuessTwoCinema != "B")
-                            {
-                                Console.WriteLine("Wrong Answer, you lost 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
 
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lose 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
-                    }
-                    Console.ReadKey();
-                    Console.WriteLine($"You current score is {playerScore.PlayerScore} points!");
-                    Console.WriteLine("Press any key to continue....");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
+                GiveMeAQuestionForAnswerD("Question 3:\n" +
+                                 "\tWhich of the following movies is based on a true story?\n" +
+                                 "\ta. The curious case of Benjamin Button\n" +
+                                 "\tb. Shawshank Redemption\n" +
+                                 "\tc.Star Wars\n" +
+                                 "\td. One Night in Miami", 1, pScore90s, new List<string> { "Wrong Answer, you lost 100 points!\n" +
+                                "Press any key to see your points total and to continue","Wrong Answer, you lost 100 points!\n" +                                  "Press any key to see your points total and to continue","Wrong Answer, you lost 100 points!\n" +
+                                "Press any key to see your points total and to continue","That was correct!! You earn 200 points!\n" +
+                                "Press any key to see your points total and to continue"}, "D");
 
-                if (guessCountCinema < guessLimitCinema)
-                {
-                    Console.WriteLine("Question 3:\n" +
-                                      "\tWhich of the following movies is based on a true story?\n" +
-                                      "\ta. The curious case of Benjamin Button\n" +
-                                      "\tb. Shawshank Redemption\n" +
-                                      "\tc.Star Wars\n" +
-                                      "\td. One Night in Miami");
-                    userGuessThreeCinema = Console.ReadLine();
-                    switch (userGuessThreeCinema.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessThreeCinema != "D")
-                            {
-                                Console.WriteLine("Wrong Answer, you lost 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "B":
-                            if (userGuessThreeCinema != "D")
-                            {
-                                Console.WriteLine("Wrong Answer, you lost 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "C":
-                            if (userGuessThreeCinema != "D")
-                            {
-                                Console.WriteLine("Wrong Answer, you lost 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "D":
-                            if (userGuessThreeCinema == "D")
-                            {
-                                Console.WriteLine("That was correct!! You earn 200 points!");
-                                playerScore.PlayerScore += 200;
-                                Console.Beep();
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lose 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
-                    }
-                    Console.ReadKey();
-                    Console.WriteLine($"You current score is {playerScore.PlayerScore} points!");
-                    Console.WriteLine("Press any key to continue....");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
 
-                if (guessCountCinema < guessLimitCinema)
-                {
-                    Console.WriteLine("Question 4:\n" +
+
+                GiveMeAQuestionForAnswerD("Question 4:\n" +
                                       "\tIn 2017, who won the Oscar for Best Female Lead?\n" +
                                       "\ta. Meryl Streep\n" +
                                       "\tb. Sandra Bullock\n" +
                                       "\tc. Anna Faris\n" +
-                                      "\td. Emma Stone");
-                    userGuessFourCinema = Console.ReadLine();
-                    switch (userGuessFourCinema.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessFourCinema != "D")
-                            {
-                                Console.WriteLine("Wrong Answer, you lose 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "B":
-                            if (userGuessFourCinema != "D")
-                            {
-                                Console.WriteLine("Wrong Answer, you lose 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "C":
-                            if (userGuessFourCinema != "D")
-                            {
-                                Console.WriteLine("Wrong Answer, you lose 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "D":
-                            if (userGuessFourCinema.ToUpper() == "D")
-                            {
-                                Console.WriteLine("That was correct!! You earn 200 points!");
-                                playerScore.PlayerScore += 200;
-                                Console.Beep();
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lose 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
-                    }
-                    Console.ReadKey();
-                    Console.WriteLine($"You current score is {playerScore.PlayerScore} points!");
-                    Console.WriteLine("Press any key to continue....");
-                    Console.ReadKey();
-                    Console.Clear();
+                                      "\td. Emma Stone", 1, pScore90s, new List<string> { "Wrong Answer, you lost 100 points!\n" +
+                                      "Press any key to see your points total and to continue","Wrong Answer, you lost 100 points!\n" +
+                                      "Press any key to see your points total and to continue","Wrong Answer, you lost 100 points!\n" +
+                                      "Press any key to see your points total and to continue","That was correct!! You earn 200 points!\n" +
+                                      "Press any key to see your points total and to continue"}, "D");
 
-                }
-                if (guessCountCinema < guessLimitCinema)
-                {
-                    Console.WriteLine("Question 5:\n" +
+                GiveMeAQuestionForAnswerA("Question 5:\n" +
                                       "\tWhich of these peope hold an EGOT(Emmy, Grammy, Oscar, and Tony\n" +
                                       "\ta. John Legend\n" +
                                       "\tb. Clint Eastwood\n" +
                                       "\tc. Matt Damon\n" +
-                                      "\td. Beyonce");
-                    userGuessFiveCinema = Console.ReadLine();
-                    switch (userGuessFiveCinema.ToUpper())
-                    {
-                        case "A":
-                            if (userGuessFiveCinema.ToUpper() == "A")
-                            {
-                                Console.WriteLine("That was correct!! You earn 200 points!");
-                                playerScore.PlayerScore += 200;
-                                Console.Beep();
-                            }
-                            break;
-                        case "B":
-                            if (userGuessFiveCinema != "A")
-                            {
-                                Console.WriteLine("Wrong Answer, you lost 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "C":
-                            if (userGuessFiveCinema != "A")
-                            {
-                                Console.WriteLine("Wrong Answer, you lost 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        case "D":
-                            if (userGuessFiveCinema != "A")
-                            {
-                                Console.WriteLine("Wrong Answer, you lost 100 points!");
-                                playerScore.PlayerScore -= 100;
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                                Console.Beep();
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("C'MON! Pay attention and pick a,b,c, or d!! For ignorance you lost 150 points");
-                            playerScore.PlayerScore -= 150;
-                            break;
-                    }
-                }
-                Console.ReadKey();
-                Console.WriteLine($"Your final score was {playerScore}. Good Job!!");
-                //if (playerScore == 100)
-                //{
-                //    RunSecretCinemaTrivia();
-                //}
-                Console.WriteLine("That was the end of the History Trivia, Press any key to try again!");
-                Console.ReadKey();
-                Console.Clear();
+                                      "\td. Beyonce", 1, pScore90s, new List<string> { "That was correct!! You earn 200 points!\n" +
+                                     "Press any key to see your points total and to continue", "Wrong Answer, you lost 100 points!\n" +
+                                     "Press any key to see your points total and to continue","Wrong Answer, you lost 100 points!\n" +
+                                     "Press any key to see your points total and to continue","Wrong Answer, you lost 100 points!\n" +
+                                     "Press any key to see your points total and to continue"}, "A");
+
+
                 Run();
             }
         }
+        
         public void RunNinetiesPopCulture(PlayerPoints pScore90s)
         {
 
@@ -825,13 +341,19 @@ namespace GroupGameChallenge
                                                 "b. David Letterman\n" +
                                                 "c. Arseniol Hall\n" +
                                             "d. Conan O'Brien", 1, pScore90s, new List<string> {
-                                      "Nice!! You just earned 200 points!! :)\n" +
-                                     "Press any key to see your points total and to continue ", "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                                     "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                    "Nice!! You just earned 200 points!! :)\n" +
+                                    "Press any key to see your points total and to continue ", "Sorry, That was incorrect! You lose 100 points! :( \n" +
                                     "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                                     "Press any key to see your points total and to continue"}, "A");
+                                    "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                    "Press any key to see your points total and to continue"}, "A");
+                Run();
             }
         }
+
+
+        //huge shoutout to terry for helping us come up with an awesome helper method that we used as the basis to then create one for each possible answer.
+
+        
         private void GiveMeAQuestionForAnswerA(string MainQuestion, int guessLimit, PlayerPoints pScore90s, List<string> questions, string correctLetter)
         {
 
@@ -848,11 +370,12 @@ namespace GroupGameChallenge
             Console.WriteLine("Press any key to advance to the next question.");
             Console.ReadKey();
             Console.Clear();
+
         }
         private void GiveMeAQuestionForAnswerB(string MainQuestion, int guessLimit, PlayerPoints pScore90s, List<string> questions, string correctLetter)
         {
-            
-            
+
+
             Console.Clear();
             if (guessCount < guessLimit)
             {
@@ -883,6 +406,23 @@ namespace GroupGameChallenge
             Console.ReadKey();
             Console.Clear();
         }
+        private void GiveMeAQuestionForAnswerD(string MainQuestion, int guessLimit, PlayerPoints pScore90s, List<string> questions, string correctLetter)
+        {
+
+
+            Console.Clear();
+            if (guessCount < guessLimit)
+            {
+                Console.WriteLine(MainQuestion);
+                userGuessOneNineties = Console.ReadLine();
+                CorrectForAnswerD(userGuessOneNineties, pScore90s, questions, correctLetter);
+            }
+            Console.ReadKey();
+            Console.WriteLine($"You current score is {pScore90s.PlayerScore} points!");
+            Console.WriteLine("Press any key to advance to the next question.");
+            Console.ReadKey();
+            Console.Clear();
+        }
         //helper method
 
         private void CorrectForAnswerA(string userGuessOneNineties, PlayerPoints pScore90s, List<string> questions, string correctLetter)
@@ -895,7 +435,7 @@ namespace GroupGameChallenge
                         Console.WriteLine(questions[0]);
                         pScore90s.PlayerScore += 200;
                         Console.Beep();
-                       
+
                     }
                     break;
                 case "B":
@@ -1027,7 +567,7 @@ namespace GroupGameChallenge
                         Console.WriteLine(questions[2]);
                         pScore90s.PlayerScore += 200;
                         Console.Beep();
-                        
+
                     }
                     break;
                 case "D":
@@ -1040,6 +580,61 @@ namespace GroupGameChallenge
                         Console.Beep();
                         Console.Beep();
                         Console.Beep();
+                    }
+                    break;
+                default:
+                    Console.WriteLine("You lose 150 points for not paying attention to what buttons you are pressing!!!\n" +
+                                        "Press any key to see your points total and to continue");
+                    pScore90s.PlayerScore -= 150;
+                    break;
+            }
+        }
+        private void CorrectForAnswerD(string userGuessOneNineties, PlayerPoints pScore90s, List<string> questions, string correctLetter)
+        {
+            switch (userGuessOneNineties.ToUpper())
+            {
+                case "A":
+                    if (userGuessOneNineties != correctLetter)
+                    {
+                        Console.WriteLine(questions[0]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                case "B":
+                    if (userGuessOneNineties != correctLetter)
+                    {
+                        Console.WriteLine(questions[1]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                case "C":
+                    if (userGuessOneNineties == correctLetter)
+                    {
+
+                        Console.WriteLine(questions[2]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                case "D":
+                    if (userGuessOneNineties.ToUpper() == correctLetter)
+                    {
+
+                        Console.WriteLine(questions[3]);
+                        pScore90s.PlayerScore += 200;
+                        Console.Beep();
+
                     }
                     break;
                 default:
