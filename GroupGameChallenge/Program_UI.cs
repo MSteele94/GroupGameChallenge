@@ -419,7 +419,7 @@ namespace GroupGameChallenge
                 Run();
             }
         }
-        public void RunCinema(PlayerPoints  pscoreC)
+        public void RunCinema(PlayerPoints playerScore)
         {
             Console.Clear();
             Console.WriteLine("\t\t\t\t\t\tWelcome to the Cinema Game!\n" +
@@ -445,12 +445,12 @@ namespace GroupGameChallenge
             {
 
 
-                GiveMeAQuestion("Question 1:\n" +
+                GiveMeAQuestionForAnswerC("Question 1:\n" +
                                         "\tWho was the Main Character of The NoteBook?\n" +
                                         "\ta. Leonardo DiCaprio\n" +
                                         "\tb. Jake Gyllenhaal\n" +
                                         "\tc. Ryan Gosling\n" +
-                                        "\td. Brad Pitt\n", 1,  pscoreC, new List<string> { "Wrong Answer, you lost 100 points!", "Wrong Answer, you lost 100 points!\n"
+                                        "\td. Brad Pitt\n", 1, playerScore, new List<string> { "Wrong Answer, you lost 100 points!", "Wrong Answer, you lost 100 points!\n"
                                         , "That was correct!! You earn 200 points!", "Wrong Answer, you lost 100 points!" }, "C");
                 if (guessCountCinema < guessLimitCinema)
                 {
@@ -706,7 +706,7 @@ namespace GroupGameChallenge
                     }
                 }
                 Console.ReadKey();
-                Console.WriteLine($"Your final score was {pscoreC}. Good Job!!");
+                Console.WriteLine($"Your final score was {playerScore}. Good Job!!");
                 //if (playerScore == 100)
                 //{
                 //    RunSecretCinemaTrivia();
@@ -717,7 +717,7 @@ namespace GroupGameChallenge
                 Run();
             }
         }
-        public void RunNinetiesPopCulture(PlayerPoints playerScore)
+        public void RunNinetiesPopCulture(PlayerPoints pScore90s)
         {
 
             // Plan to add a secret trivia section where if playerScore equals a certain score it will activate another round of tougher questions
@@ -727,9 +727,11 @@ namespace GroupGameChallenge
             //
             //
             //
-            Console.WriteLine("Welcome to the 90's Pop Culture Game!\n" +
-                                "Please carefully select your answers.An invalid character\n" +
-                                "will result in an extra deduction of points!!");
+            Console.Clear();
+            Console.WriteLine("\t\t\t\t\tWelcome to the 90's Pop Culture Game!\n" +
+                                "\t\t\t\tPlease carefully select your answers.An invalid character\n" +
+                                "\t\t\t\twill result in an extra deduction of points!!");
+            Console.ReadKey();
             Console.Clear();
 
 
@@ -740,68 +742,106 @@ namespace GroupGameChallenge
             while (isRunning)
             {
 
-                //
-                //
-                GiveMeAQuestion("Question 1:\n" +
+
+                //Use the give me a question helper method, in the paramaters the synatax is "Our Question, the number of guesses allowed "1",
+
+                //the playerScore, a new List<string> { "The responses to the users input" } , and finally the correct answer to the Question. Each response needs a comma
+
+                // the correct answer at the end of our syntax is typed out as " A " or whatever the correct letter is. pulls from the switch cases we typed
+                GiveMeAQuestionForAnswerB("Question 1:\n" +
                                     "How did Jennifer Lopez make her acting debut into the pop culture scene?\n" +
                                     "\ta. The George Lopez Show\n" +
                                     "\tb. Selena\n" +
                                     "\tc. Orange is the New Black\n" +
-                                    "\td. Sister Sister", 1, playerScore, new List<string>
-                                    {
-                                        "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                            "Press any key to see your points total and to continue",
-                            "Nice!! You just earned 200 points!! :)\n" +
-                            "Press any key to see your points total and to continue ",
-                            "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                            "Press any key to see your points total and to continue",
-                            "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                            "Press any key to see your points total and to continue"
+                                    "\td. Sister Sister", 1, pScore90s, new List<string> {
+                                    "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                    "Press any key to see your points total and to continue",
+                                    "Nice!! You just earned 200 points!! :)\n" +
+                                    "Press any key to see your points total and to continue ",
+                                    "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                    "Press any key to see your points total and to continue",
+                                    "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                    "Press any key to see your points total and to continue"
                                     }, "B");
                 // Console.ReadKey();
 
                 //
-                GiveMeAQuestion("Question 2:\n" +
+                GiveMeAQuestionForAnswerB("Question 2:\n" +
                                                 "Complete the line.. \"Saved by the ____ \"\n" +
                                                 "a. Alarm\n" +
                                                 "b. Bell\n" +
                                                 "c. Book\n" +
-                                                "d. Club", 1, playerScore, new List<string> 
-                                                { 
-                                                    "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                                "d. Club", 1, pScore90s, new List<string> {
+                                                "Sorry, That was incorrect! You lose 100 points! :( \n" +
                                                 "Press any key to see your points total and to continue","Nice!! You just earned 200 points!! :)\n" +
-                                   "Press any key to see your points total and to continue", 
-                                   "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                                        "Press any key to see your points total and to continue\n", 
+                                   "Press any key to see your points total and to continue", "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                        "Press any key to see your points total and to continue\n",
                                         "Sorry, That was incorrect! You lose 100 points! :( \n" +
                                        "Press any key to see your points total and to continue"}, "B");
                 //
                 //
-                GiveMeAQuestion("Question 3:\n" +
+                GiveMeAQuestionForAnswerC("Question 3:\n" +
                                                 "In what city did Kevin McCallister get lost?\n" +
                                                 "a. Chicago\n" +
                                                 "b. Los Angeles\n" +
                                                 "c. New York\n" +
-                                                "d. Omaha", 1, playerScore, new List<string> { "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                                                "Press any key to see your points total and to continue", 
+                                                "d. Omaha", 1, pScore90s, new List<string> {
                                                 "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                                                "Press any key to see your points total and to continue\n",
-                                                "Nice!! You just earned 200 points!! :)\n" +
-                                                "Press any key to see your points total and to continue \n",
-                                                "Sorry, That was incorrect! You lose 100 points! :( \n" +
-                                                "Press any key to see your points total and to continue\n" }, "C");
-                    Console.ReadKey();
+                                               "Press any key to see your points total and to continue",
+                                               "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                               "Press any key to see your points total and to continue\n",
+                                               "Nice!! You just earned 200 points!! :)\n" +
+                                               "Press any key to see your points total and to continue \n",
+                                               "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                               "Press any key to see your points total and to continue\n" }, "C");
+                //Console.ReadKey();
+                GiveMeAQuestionForAnswerA("Question 4:\n" +
+                                            "Which one of these people played in both The Titanic AND Misery?\n" +
+                                            "a. Kathy Bates\n" +
+                                            "b. Halle Berry\n" +
+                                            "c. Kate Winslet\n" +
+                                            "d. Stephen King", 1, pScore90s, new List<string> {
+                                            "Nice!! You just earned 200 points!! :)\n" +
+                                        "Press any key to see your points total and to continue ", "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                        "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                        "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                        "Press any key to see your points total and to continue"}, "A");
 
+                GiveMeAQuestionForAnswerB("Question 5:\n" +
+                                              "Who was the lead singer for N'Sync?\n" +
+                                             "a. Nick Carter\n" +
+                                             "b. Justin Timberlake\n" +
+                                             "c. Lance bass\n" +
+                                             "d. Stephen King", 1, pScore90s, new List<string>{
+                                             "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                            "Press any key to see your points total and to continue" , "Nice!! You just earned 200 points!! :)\n" +
+                                            "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                            "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                            "Press any key to see your points total and to continue" }, "B");
+
+                GiveMeAQuestionForAnswerA("Question 6: \n" +
+                                                "Which Late Night Show host has the biggest car collection?\n" +
+                                                "a. Jay Leno\n" +
+                                                "b. David Letterman\n" +
+                                                "c. Arseniol Hall\n" +
+                                            "d. Conan O'Brien", 1, pScore90s, new List<string> {
+                                      "Nice!! You just earned 200 points!! :)\n" +
+                                     "Press any key to see your points total and to continue ", "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                     "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                    "Press any key to see your points total and to continue" , "Sorry, That was incorrect! You lose 100 points! :( \n" +
+                                     "Press any key to see your points total and to continue"}, "A");
             }
         }
-        private void GiveMeAQuestion(string MainQuestion, int guessLimit, PlayerPoints pScore90s, List<string> questions, string correctLetter)
+        private void GiveMeAQuestionForAnswerA(string MainQuestion, int guessLimit, PlayerPoints pScore90s, List<string> questions, string correctLetter)
         {
 
+
+            Console.Clear();
             if (guessCount < guessLimit)
             {
                 Console.WriteLine(MainQuestion);
                 userGuessOneNineties = Console.ReadLine();
-                NinetysQuestionMachine(userGuessOneNineties, pScore90s, questions, correctLetter);
+                CorrectForAnswerA(userGuessOneNineties, pScore90s, questions, correctLetter);
             }
             Console.ReadKey();
             Console.WriteLine($"You current score is {pScore90s.PlayerScore} points!");
@@ -809,11 +849,98 @@ namespace GroupGameChallenge
             Console.ReadKey();
             Console.Clear();
         }
+        private void GiveMeAQuestionForAnswerB(string MainQuestion, int guessLimit, PlayerPoints pScore90s, List<string> questions, string correctLetter)
+        {
+            
+            
+            Console.Clear();
+            if (guessCount < guessLimit)
+            {
+                Console.WriteLine(MainQuestion);
+                userGuessOneNineties = Console.ReadLine();
+                CorrectForAnswerB(userGuessOneNineties, pScore90s, questions, correctLetter);
+            }
+            Console.ReadKey();
+            Console.WriteLine($"You current score is {pScore90s.PlayerScore} points!");
+            Console.WriteLine("Press any key to advance to the next question.");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        private void GiveMeAQuestionForAnswerC(string MainQuestion, int guessLimit, PlayerPoints pScore90s, List<string> questions, string correctLetter)
+        {
 
+
+            Console.Clear();
+            if (guessCount < guessLimit)
+            {
+                Console.WriteLine(MainQuestion);
+                userGuessOneNineties = Console.ReadLine();
+                CorrectForAnswerC(userGuessOneNineties, pScore90s, questions, correctLetter);
+            }
+            Console.ReadKey();
+            Console.WriteLine($"You current score is {pScore90s.PlayerScore} points!");
+            Console.WriteLine("Press any key to advance to the next question.");
+            Console.ReadKey();
+            Console.Clear();
+        }
         //helper method
-        //
-        //
-        private void NinetysQuestionMachine(string userGuessOneNineties, PlayerPoints pScore90s, List<string> questions,string correctLetter)
+
+        private void CorrectForAnswerA(string userGuessOneNineties, PlayerPoints pScore90s, List<string> questions, string correctLetter)
+        {
+            switch (userGuessOneNineties.ToUpper())
+            {
+                case "A":
+                    if (userGuessOneNineties.ToUpper() == correctLetter)
+                    {
+                        Console.WriteLine(questions[0]);
+                        pScore90s.PlayerScore += 200;
+                        Console.Beep();
+                       
+                    }
+                    break;
+                case "B":
+                    if (userGuessOneNineties != correctLetter)
+                    {
+                        Console.WriteLine(questions[1]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                case "C":
+                    if (userGuessOneNineties != correctLetter)
+                    {
+
+                        Console.WriteLine(questions[2]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                case "D":
+                    if (userGuessOneNineties != correctLetter)
+                    {
+
+                        Console.WriteLine(questions[3]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                default:
+                    Console.WriteLine("You lose 150 points for not paying attention to what buttons you are pressing!!!\n" +
+                                        "Press any key to see your points total and to continue");
+                    pScore90s.PlayerScore -= 150;
+                    break;
+            }
+        }
+        private void CorrectForAnswerB(string userGuessOneNineties, PlayerPoints pScore90s, List<string> questions, string correctLetter)
         {
             switch (userGuessOneNineties.ToUpper())
             {
@@ -846,6 +973,61 @@ namespace GroupGameChallenge
                         Console.Beep();
                         Console.Beep();
                         Console.Beep();
+                    }
+                    break;
+                case "D":
+                    if (userGuessOneNineties != correctLetter)
+                    {
+
+                        Console.WriteLine(questions[3]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                default:
+                    Console.WriteLine("You lose 150 points for not paying attention to what buttons you are pressing!!!\n" +
+                                        "Press any key to see your points total and to continue");
+                    pScore90s.PlayerScore -= 150;
+                    break;
+            }
+        }
+        private void CorrectForAnswerC(string userGuessOneNineties, PlayerPoints pScore90s, List<string> questions, string correctLetter)
+        {
+            switch (userGuessOneNineties.ToUpper())
+            {
+                case "A":
+                    if (userGuessOneNineties != correctLetter)
+                    {
+                        Console.WriteLine(questions[0]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                case "B":
+                    if (userGuessOneNineties != correctLetter)
+                    {
+                        Console.WriteLine(questions[1]);
+                        pScore90s.PlayerScore -= 100;
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    break;
+                case "C":
+                    if (userGuessOneNineties.ToUpper() == correctLetter)
+                    {
+
+                        Console.WriteLine(questions[2]);
+                        pScore90s.PlayerScore += 200;
+                        Console.Beep();
+                        
                     }
                     break;
                 case "D":
